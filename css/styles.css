@@ -1,0 +1,323 @@
+/* Reset HTML */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Game styles */
+
+@font-face {
+    font-family: 'NasaFont';
+    src: url('fonts/Nasa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ExoBold';
+    src: url('fonts/Exo-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    background-image: url("../imgs/main-wppr2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #4A4462;
+    font-family: 'ExoRegular';
+    color: #ffffff;
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    font-family: 'NasaFont';
+}
+
+body {
+    z-index: 9;
+}
+
+.bg {
+    background-image: url("../imgs/bg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(2px); /* Safari */
+    filter: blur(2px);
+    z-index: 0;
+}
+
+a, i, button, input {
+    outline: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1, h3 {
+    text-transform: uppercase;
+    padding: 50px 0;
+    text-shadow: 4px 4px 0px #ab7faf;
+    text-shadow: 2px 2px 0px #ab7faf;
+    animation: pulse 3s infinite, fadein 2s, slide 0.5s forwards;
+    -webkit-animation: pulse 3s infinite, fadein 2s, slide 0.5s forwards;
+}
+
+h1 {
+    font-size: 75px;
+    letter-spacing: 5px;
+}
+
+h3 {
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.modal-details,
+.modal-story {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background-color: #000;
+    text-align: center;
+    overflow: auto;
+    display: none;
+}
+.modal-details {
+    display: none;
+}
+.team-desc {
+    margin: 5% 10%;
+}
+.team-desc h1 {
+    margin-bottom: 80px;
+}
+.team-desc h3 {
+    padding: 25px 0;
+    text-shadow: none;
+    animation: none;
+    -webkit-animation: none;
+    padding: 25px 0 0px;
+}
+.team-desc h3:hover {
+    transform: scale(1.05);
+    animation: 3ms;
+}
+.star-wars-intro {
+    margin: 5% 10%;
+}
+.star-wars-intro p {
+    font-size: 25px;
+}
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 30px;
+}
+.close-modal:hover {
+    transform: scale(1.1);
+    animation: 3ms;
+}
+
+/* HOME ------------------------------------------------------- */
+.home-content {
+    width: 100%;
+    padding: 3% 0;
+    text-align: center;
+    position: relative;
+}
+.home-content img {
+    width: 150px;
+    margin-top: 100px;
+    cursor: pointer;
+    opacity: .8;
+}
+.home-content img:hover {
+    transform: scale(1.1);
+    animation: 5ms;
+    opacity: 1;
+}
+.game-details {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.game-details img {
+    width: 150px;
+    margin: 10px;
+    opacity: .9;
+}
+.game-details .team {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    text-align: right;
+}
+.game-details span {
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+.game-details .campus:hover,
+.game-details .team:hover {
+    transform: scale(1.05);
+    animation: 3ms;
+    opacity: 1;
+}
+
+/* PHASES ------------------------------------------------------- */
+
+.next-page {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+.next-page img {
+    width: 50px;
+    opacity: .9;
+}
+.next-page img:hover {
+    transform: scale(1.1);
+    animation: 5ms;
+    opacity: 1;
+}
+.timer {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.timer span {
+    font-size: 50px;
+    letter-spacing: 10px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+/* PHASE TWO ------------------------------------------------------- */
+
+.form-content {
+    margin-top: 100px;
+    background-color: transparent;
+    color: #ffffff;
+}
+.square-opt {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 50px;
+    background-color: #ffffff52;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    cursor: pointer;
+}
+.square-opt:hover {
+    transform: scale(1.1);
+    animation: 5ms;
+    background-color: #ffffff99;
+}
+form label {
+    font-size: 40px;
+    text-shadow: 2px 2px 0px #717171;
+}
+
+/* KEYFRAMES ------------------------------------------------------- */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.95);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(.95);
+    }
+}
+
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+      color: #4A4462;
+    }
+  }
+@-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+      color: #4A4462;
+    }
+}
