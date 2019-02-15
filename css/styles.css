@@ -60,6 +60,13 @@ table {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'ExoRegular';
+    src: url('fonts/Exo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     background-image: url("../imgs/main-wppr2.jpg");
     background-size: cover;
@@ -140,14 +147,11 @@ h3 {
     overflow: auto;
     display: none;
 }
-.modal-details {
-    display: none;
-}
 .team-desc {
     margin: 5% 10%;
 }
 .team-desc h1 {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 .team-desc h3 {
     padding: 25px 0;
@@ -164,7 +168,9 @@ h3 {
     margin: 5% 10%;
 }
 .star-wars-intro p {
-    font-size: 25px;
+    font-size: 40px;
+    font-family: 'ExoRegular';
+    line-height: 45px;
 }
 .close-modal {
     position: absolute;
@@ -176,6 +182,9 @@ h3 {
 .close-modal:hover {
     transform: scale(1.1);
     animation: 3ms;
+}
+.continue:hover {
+
 }
 
 /* HOME ------------------------------------------------------- */

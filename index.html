@@ -13,13 +13,22 @@
   </head>
 
   <body>
+        <script type="text/javascript">
+            function openModal (className) {
+                document.getElementsByClassName(className)[0].style.display = "block";
+            }
+            function closeModal (className) {
+                document.getElementsByClassName(className)[0].style.display = "none";
+            }
+        </script>
+
     <header>
       <h1>Além do Tempo</h1>
     </header>
 
     <div class="home-content">
 
-      <a class="start-game" href="phase-one.html">
+      <a class="start-game" onclick="openModal('modal-story')">
            <img src="imgs/playbtn.svg">
       </a>
         
@@ -31,16 +40,16 @@
                 <img src="imgs/campus-logo.png">
             </a>
         </div>
-        <div class="team">
-            <a href="https://twitter.com/JamCpbr" target="_blank">Girls Game Jam</a>
+        <a class="team" onclick="openModal('modal-details')">
+            <h5>Girls Game Jam</h5>
             <span>Time 3</span>
-        </div>
+        </a>
     </div>
 
   </body>
 
   <div class="modal-details">
-    <div class="close-modal">
+    <div class="close-modal" onclick="closeModal('modal-details')">
         <span>X</span>
     </div>
         <section class="team-desc">
@@ -55,27 +64,50 @@
                 <h3>Marta Jesus Silva</h3>
                 <span>Produção e Roteiro</span>
             </a>
+            <a href="https://www.instagram.com/praticamente.inofensiva" target="_blank">
+                <h3>Natasha Morais Silva</h3>
+                <span>Desenvolvimento</span>
+            </a>
             <a href="https://www.instagram.com/tamtuza" target="_blank">
                 <h3>Tamillys Pantuza</h3>
                 <span>Desenvolvimento</span>
+            </a>
+            <a href="https://www.facebook.com/vitoria.nogueira.1004" target="_blank">
+                <h3>Vitória Nogueira</h3>
+                <span>Efeitos Sonoros</span>
             </a>
         </section>
     </div>
 
   <div class="modal-story">
       <section class="star-wars-intro">
-          <h1>Título da etapa</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec diam sed lacus aliquam fringilla. Duis at tempus leo, eu efficitur justo. Donec in mi vitae urna egestas dignissim nec ut ex. Ut viverra lorem sit amet sem mollis imperdiet. Donec pellentesque nunc quis neque efficitur, vel faucibus lectus tempus. Vestibulum eu augue finibus, laoreet sapien at, congue orci. Curabitur rhoncus condimentum lacinia. Sed vel arcu sed mauris fringilla ornare vitae nec nisi. Mauris at viverra tortor. Quisque viverra nibh elit, a sollicitudin enim venenatis nec. Sed turpis diam, semper nec tempus a, interdum sed dui.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec diam sed lacus aliquam fringilla. Duis at tempus leo, eu efficitur justo. Donec in mi vitae urna egestas dignissim nec ut ex. Ut viverra lorem sit amet sem mollis imperdiet. Donec pellentesque nunc quis neque efficitur, vel faucibus lectus tempus. Vestibulum eu augue finibus, laoreet sapien at, congue orci. Curabitur rhoncus condimentum lacinia. Sed vel arcu sed mauris fringilla ornare vitae nec nisi. Mauris at viverra tortor. Quisque viverra nibh elit, a sollicitudin enim venenatis nec. Sed turpis diam, semper nec tempus a, interdum sed dui.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec diam sed lacus aliquam fringilla. Duis at tempus leo, eu efficitur justo. Donec in mi vitae urna egestas dignissim nec ut ex. Ut viverra lorem sit amet sem mollis imperdiet. Donec pellentesque nunc quis neque efficitur, vel faucibus lectus tempus. Vestibulum eu augue finibus, laoreet sapien at, congue orci. Curabitur rhoncus condimentum lacinia. Sed vel arcu sed mauris fringilla ornare vitae nec nisi. Mauris at viverra tortor. Quisque viverra nibh elit, a sollicitudin enim venenatis nec. Sed turpis diam, semper nec tempus a, interdum sed dui.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec diam sed lacus aliquam fringilla. Duis at tempus leo, eu efficitur justo. Donec in mi vitae urna egestas dignissim nec ut ex. Ut viverra lorem sit amet sem mollis imperdiet. Donec pellentesque nunc quis neque efficitur, vel faucibus lectus tempus. Vestibulum eu augue finibus, laoreet sapien at, congue orci. Curabitur rhoncus condimentum lacinia. Sed vel arcu sed mauris fringilla ornare vitae nec nisi. Mauris at viverra tortor. Quisque viverra nibh elit, a sollicitudin enim venenatis nec. Sed turpis diam, semper nec tempus a, interdum sed dui.</p>
+          <h1>Título Intro</h1>
+          <p>
+                Texto Intro
+          </p>
+          <p>
+                Texto Intro
+          </p>
+          <a class="continue" href="phase-one.html">
+                Continuar
+            </a>
       </section>
 
-      
+      <!-- <section class="star-wars-intro">
+          <h1>1: O arquivo L97ab</h1>
+          <p>
+                Olá, Recruta, eu sou Katherine Johnson. 
+          </p>
+          <p>
+                Sua primeira missão é nos ajudar e enviar um Sinal para a Apolo 11, 
+                mas para isso precisamos achar o canal correto nesse labirinto de informações
+          </p>
+          <a class="continue" href="phase-one.html">
+                Continuar
+            </a>
+      </section> -->
 
-    <a class="continue" href="phase-one.html">
-        Continuar
-    </a>
+    
   </div>
 
 </html>
