@@ -146,6 +146,25 @@ h3 {
     text-align: center;
     overflow: auto;
     display: none;
+    animation: fadein 1s,
+}
+.modal-error,
+.modal-cngrts,
+.modal-info {
+    position: absolute;
+    top: 30%;
+    width: 40%;
+    margin: 0 30%;
+    background-color: #1D2427;
+    color: #fff;
+    text-align: center;
+    display: none;
+    animation: fadein 1s,
+}
+.modal-error,
+.modal-cngrts,
+.modal-info h3 {
+    animation: none;
 }
 .team-desc {
     margin: 5% 10%;
@@ -183,9 +202,20 @@ h3 {
     transform: scale(1.1);
     animation: 3ms;
 }
-.continue:hover {
-
+.continue {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    font-size: 25px;
+    letter-spacing: 5px;
 }
+.continue:hover {
+    color: #ab7faf;
+}
+
 
 /* HOME ------------------------------------------------------- */
 .home-content {
@@ -239,16 +269,20 @@ h3 {
 
 /* PHASES ------------------------------------------------------- */
 
+.try-again,
 .next-page {
     position: absolute;
     bottom: 30px;
     right: 30px;
     cursor: pointer;
+    display: none;
 }
+.try-again img,
 .next-page img {
     width: 50px;
     opacity: .9;
 }
+.try-again img:hover,
 .next-page img:hover {
     transform: scale(1.1);
     animation: 5ms;
@@ -256,14 +290,16 @@ h3 {
 }
 .timer {
     position: absolute;
-    top: 30px;
+    top: 25%;
     right: 30px;
 }
 .timer span {
+    content: "";
     font-size: 50px;
     letter-spacing: 10px;
-    animation: blink-animation 1s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    text-shadow: 1px 1px 0px #ababab;
+    animation: blink-animation 1s steps(5, start) 20s;
+    -webkit-animation: blink-animation 1s steps(5, start) 20s;
 }
 
 /* PHASE TWO ------------------------------------------------------- */
@@ -279,7 +315,7 @@ h3 {
     color: #ffffff;
     font-size: 50px;
     background-color: #ffffff52;
-    width: 80px;
+    min-width: 80px;
     height: 80px;
     margin: 10px;
     cursor: pointer;
@@ -292,6 +328,14 @@ h3 {
 form label {
     font-size: 40px;
     text-shadow: 2px 2px 0px #717171;
+}
+.rocket {
+    animation: bounce 1s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+}
+.coffee .square-opt {
+    font-size: 30px;
+    height: 60px;
 }
 
 /* KEYFRAMES ------------------------------------------------------- */
@@ -330,3 +374,20 @@ form label {
       color: #4A4462;
     }
 }
+
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }

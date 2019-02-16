@@ -13,32 +13,120 @@
   </head>
 
   <!-- <div class="bg"></div> -->
-  <body class="phase math">
-        <audio autoplay loop>
-            <source src="sounds/clock-tick.wav" type="audio/wav">
-        </audio>
+  <body class="phase coffee">
+      <audio autoplay loop>
+          <source src="sounds/clock-tick.wav" type="audio/wav">
+      </audio>
 
     <div class="timer">
-        <span>:30</span>
+        <span></span>
     </div>
-      
         
     <header>
-      <h3>Sem café os engenheiros não trabalham</h3>
+      <h3>Os engenheiros não podem ficar sem café</h3>
     </header>
 
     <div class="form-content">
         <form>
-            <button class="square-opt">4</button>
-            <button class="square-opt">23</button>
-            <button class="square-opt">19</button>
-            <button class="square-opt">7</button>
+            <div class="btn-container" >
+              <!-- Buttons -->
+            </div>
         </form>
     </div>
+
+    
 
     <a class="next-page" href="phase-four.html">
         <img src="imgs/rightarrow.svg">
     </a>
+    <a class="try-again" href="phase-tree.html">
+        <img src="imgs/repeat.svg">
+    </a>
+
+    <div class="modal-info">
+        <div class="close-modal" onclick="closeModal('modal-info')">
+            <span>X</span>
+        </div>
+        <section class="star-wars-intro">
+            <h3>Tempo esgotado!</h3>
+        </section>
+    </div>
+
+    <div class="modal-cngrts">
+        <div class="close-modal" onclick="closeModal('modal-cngrts')">
+            <span>X</span>
+        </div>
+        <section class="star-wars-intro">
+            <h3>Ufa! Conseguimos!</h3>
+        </section>
+    </div>
+
+
+    <script type="text/javascript">
+      function openModal (className) {
+          document.getElementsByClassName(className)[0].style.display = "block";
+      }
+      function closeModal (className) {
+          document.getElementsByClassName(className)[0].style.display = "none";
+      }
+      function isFinished() {
+        if (document.getElementsByClassName("square-opt").length == 0) {
+          document.getElementsByClassName('modal-cngrts')[0].style.display = "block";
+          document.getElementsByClassName('next-page')[0].style.display = "block";
+          return true;
+        }
+        else {
+          document.getElementsByClassName('try-again')[0].style.display = "block";
+          return false;
+        }
+      }
+          function add(btnID) {
+              var element = document.createElement('input');
+              element.setAttribute('type', 'button');
+              element.setAttribute('value', 'Servir Café');
+              element.setAttribute('class', 'square-opt');
+              element.setAttribute('id', btnID);
+              element.setAttribute('onclick', 'deleteButton('+ btnID +')');
+              document.body.appendChild(element);
+            }
+          function deleteButton(btnID) {
+            document.getElementById(btnID.id).remove();
+          }
+          function createTimer(seconds) {
+                  intervalVar = setInterval(function () {
+                      if (seconds === 0) {
+                        clearInterval(intervalVar);
+                        if (!isFinished()) {
+                          document.getElementsByClassName('modal-info')[0].style.display = "block";
+                          document.getElementsByClassName('try-again')[0].style.display = "block";
+                        }
+                        return;
+                      }
+                      if (seconds <= 10 && seconds > 5) {
+                          document.getElementsByClassName("timer")[0].children[0].style.color = "orangered";
+                      }
+                      else if (seconds <= 5) {
+                          document.getElementsByClassName("timer")[0].children[0].style.color = "red";
+                      }
+                      else {
+                          document.getElementsByClassName("timer")[0].children[0].style.color = "green";
+                      }
+                      var minutes = Math.floor(seconds / 60);
+                      var secondsToShow = (seconds - minutes * 60).toString();
+                      if (secondsToShow.length === 1) {
+                          secondsToShow = "0" + secondsToShow;
+                      }
+                      document.getElementsByClassName("timer")[0].children[0].innerText = minutes.toString() + ":" + secondsToShow;
+                      seconds--;
+
+                      if (seconds >= 2) {
+                        add("id" + seconds + "a");
+                        add("id" + seconds + "b");
+                      }
+                  }, 1000);
+              }
+              createTimer(15);
+  </script>
 
     </body>
 </html>

@@ -14,9 +14,60 @@
 
   <!-- <div class="bg"></div> -->
   <body class="phase math">
+      <audio autoplay loop>
+          <source src="sounds/clock-tick.wav" type="audio/wav">
+      </audio>
+
+      <script type="text/javascript">
+        function openModal (className) {
+            document.getElementsByClassName(className)[0].style.display = "block";
+        }
+        function closeModal (className) {
+            document.getElementsByClassName(className)[0].style.display = "none";
+        }
+        function checkAnswer(answer) {
+          if (answer == 'c') {
+            document.getElementsByClassName('modal-cngrts')[0].style.display = "block";
+            document.getElementsByClassName('next-page')[0].style.display = "block";
+          }
+          else {
+            document.getElementsByClassName('modal-error')[0].style.display = "block";
+            document.getElementsByClassName('try-again')[0].style.display = "block";
+          }
+        }
+        </script>
+        <script type="text/javascript">
+        function createTimer(seconds) {
+                intervalVar = setInterval(function () {
+                    if (seconds === 0) {
+                        clearInterval(intervalVar);
+                        document.getElementsByClassName('modal-info')[0].style.display = "block";
+                        document.getElementsByClassName('try-again')[0].style.display = "block";
+                        return;
+                    }
+                    if (seconds <= 10 && seconds > 5) {
+                        document.getElementsByClassName("timer")[0].children[0].style.color = "orangered";
+                    }
+                    else if (seconds <= 5) {
+                        document.getElementsByClassName("timer")[0].children[0].style.color = "red";
+                    }
+                    else {
+                        document.getElementsByClassName("timer")[0].children[0].style.color = "green";
+                    }
+                    var minutes = Math.floor(seconds / 60);
+                    var secondsToShow = (seconds - minutes * 60).toString();
+                    if (secondsToShow.length === 1) {
+                        secondsToShow = "0" + secondsToShow;
+                    }
+                    document.getElementsByClassName("timer")[0].children[0].innerText = minutes.toString() + ":" + secondsToShow;
+                    seconds--;
+                }, 1000);
+            }
+            createTimer(15);
+    </script>
 
       <div class="timer">
-          <span>:30</span>
+          <span></span>
       </div>
 
     <header>
@@ -26,20 +77,65 @@
 
     <div class="form-content">
         <form>
-            <label>8 + 4 + 12 - 85 + 147</label>
+            <label>8 + 7 + 13 - 5 + 12</label>
     
             <div>
-                <button class="square-opt">4</button>
-                <button class="square-opt">23</button>
-                <button class="square-opt">19</button>
-                <button class="square-opt">7</button>
+                <input type="button" class="square-opt" value="15" onclick="checkAnswer('a')">
+                <input type="button" class="square-opt" value="23" onclick="checkAnswer('b')">
+                <input type="button" class="square-opt" value="35" onclick="checkAnswer('c')">
+                <input type="button" class="square-opt" value="7" onclick="checkAnswer('d')">
             </div>
         </form>
     </div>
 
-    <a class="next-page" href="phase-tree.html">
+    <a class="next-page" onclick="openModal('modal-story')">
         <img src="imgs/rightarrow.svg">
     </a>
+    <a class="try-again" href="phase-two.html">
+        <img src="imgs/repeat.svg">
+    </a>
+
+    <div class="modal-info">
+        <div class="close-modal" onclick="closeModal('modal-info')">
+            <span>X</span>
+        </div>
+        <section class="star-wars-intro">
+            <h3>Tempo esgotado!</h3>
+        </section>
+    </div>
+
+    <div class="modal-error">
+        <div class="close-modal" onclick="closeModal('modal-error')">
+            <span>X</span>
+        </div>
+        <section class="star-wars-intro">
+            <h3>Resposta errada!</h3>
+        </section>
+    </div>
+
+    <div class="modal-cngrts">
+        <div class="close-modal" onclick="closeModal('modal-cngrts')">
+            <span>X</span>
+        </div>
+        <section class="star-wars-intro">
+            <h3>Ufa! Conseguimos!</h3>
+        </section>
+    </div>
+
+    <div class="modal-story">
+            <section class="star-wars-intro">
+                <h1>Título Intro</h1>
+                <p>
+                      Texto Intro
+                </p>
+                <p>
+                      Texto Intro
+                </p>
+                <a class="continue" href="phase-tree.html">
+                      Continuar
+                  </a>
+            </section>
+    </div>
 
     </body>
 </html>
