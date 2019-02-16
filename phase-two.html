@@ -14,7 +14,7 @@
 
   <!-- <div class="bg"></div> -->
   <body class="phase math">
-      <audio autoplay loop>
+      <audio class="audio" autoplay loop>
           <source src="sounds/clock-tick.wav" type="audio/wav">
       </audio>
 
@@ -29,6 +29,7 @@
           if (answer == 'c') {
             document.getElementsByClassName('modal-cngrts')[0].style.display = "block";
             document.getElementsByClassName('next-page')[0].style.display = "block";
+            document.getElementsByClassName('try-again')[0].style.display = "none";
           }
           else {
             document.getElementsByClassName('modal-error')[0].style.display = "block";
@@ -41,6 +42,7 @@
                 intervalVar = setInterval(function () {
                     if (seconds === 0) {
                         clearInterval(intervalVar);
+                        document.getElementsByClassName('audio')[0].pause();
                         document.getElementsByClassName('modal-info')[0].style.display = "block";
                         document.getElementsByClassName('try-again')[0].style.display = "block";
                         return;
@@ -124,13 +126,12 @@
 
     <div class="modal-story">
             <section class="star-wars-intro">
-                <h1>Título Intro</h1>
+                <h1>Recruta! Recruta! Me acompanhe!</h1>
                 <p>
-                      Texto Intro
+                    Meu nome é <strong>Mary Jackson</strong>, estou tentando uma vaga no treinamento
+                    para engenheiros da NASA e eles me mandam fazer de tudo.
                 </p>
-                <p>
-                      Texto Intro
-                </p>
+                <p>Me ajude, rápido!</p>
                 <a class="continue" href="phase-tree.html">
                       Continuar
                   </a>

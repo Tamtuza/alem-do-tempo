@@ -191,6 +191,10 @@ h3 {
     font-family: 'ExoRegular';
     line-height: 45px;
 }
+.star-wars-intro p strong {
+    color: #ab7faf;
+    font-family: ExoBold;
+}
 .close-modal {
     position: absolute;
     top: 30px;

@@ -14,7 +14,7 @@
 
   <!-- <div class="bg"></div> -->
   <body class="phase maze">
-        <audio autoplay loop>
+        <audio class="audio" autoplay loop>
             <source src="sounds/clock-tick.wav" type="audio/wav">
         </audio>
 
@@ -106,6 +106,7 @@
                 }
                 else if (movingAllowed === 2) {
                     clearInterval(intervalVar);
+                    document.getElementsByClassName('audio')[0].pause();
                     makeWhite(0, 0, canvas.width, canvas.height);
                     document.getElementsByClassName('modal-cngrts')[0].style.display = "block";
                     document.getElementsByClassName('next-page')[0].style.display = "block";
@@ -206,7 +207,7 @@
             <section class="star-wars-intro">
                     <h1>2: Números demais</h1>
                     <p>
-                          Eu sou Dorothy Vauchan, chefe do departamento.
+                          Eu sou <strong>Dorothy Vauchan</strong>, chefe do departamento.
                           Preciso que você calcule as rotas o mais rápido possível.
                           O sucesso da missão Apollo 11 está em nossas mãos.
                     </p>

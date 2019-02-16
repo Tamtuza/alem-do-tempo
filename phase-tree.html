@@ -14,7 +14,7 @@
 
   <!-- <div class="bg"></div> -->
   <body class="phase coffee">
-      <audio autoplay loop>
+      <audio class="audio" autoplay loop>
           <source src="sounds/clock-tick.wav" type="audio/wav">
       </audio>
 
@@ -96,6 +96,7 @@
                   intervalVar = setInterval(function () {
                       if (seconds === 0) {
                         clearInterval(intervalVar);
+                        document.getElementsByClassName('audio')[0].pause();
                         if (!isFinished()) {
                           document.getElementsByClassName('modal-info')[0].style.display = "block";
                           document.getElementsByClassName('try-again')[0].style.display = "block";
